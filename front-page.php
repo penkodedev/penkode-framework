@@ -17,8 +17,6 @@ Template Name: Index Full Width
 				<?php endif; ?>
 
 			</article>
-
-		
 		</section>
 
 		<section class="section-02">
