@@ -1,0 +1,27 @@
+/*
+----------------------------
+    @SIDEBAR 
+----------------------------
+*/
+
+aside {
+    background: $sidebar-bg-color;
+    border-left: 1px solid #d9d9d9;
+}
+
+aside .sidebar { //clean styles from aside content
+	border-left: none;
+	padding: 40px 0 40px 30px; // same as GRID GAP
+    position: sticky;
+    top: 90px; // necessary for STICKY position
+}
+
+aside .sidebox { //clean styles from aside content
+	margin-bottom: 0px;
+}
+
+
+aside .sidebar h3 {
+    font-size:calc(1rem + 1vmin);
+    line-height: $text-lh/1;
+}

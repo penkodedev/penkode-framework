@@ -1,0 +1,156 @@
+/*
+----------------------------
+    @GRID POSTS
+----------------------------
+*/
+
+// Define column widths
+$column-widths: (
+    1: 100%,
+    2: 50%,
+    3: 33.333333%,
+    4: 25%,
+    5: 20%,
+    6: 16.666667%,
+    7: 14.285714%,
+    8: 12.5%,
+    9: 11.111111%,
+    10: 10%,
+    11: 9.090909%,
+    12: 8.333333%
+);
+
+// Generate column styles
+@for $i from 1 through 12 {
+    #grid-col-#{$i} {
+        width: map-get($column-widths, $i);
+    }
+}
+
+// Mixin for media queries
+@mixin responsive-columns($width, $max-width) {
+    @media screen and (max-width: $max-width) {
+        #grid-col-1, 
+        #grid-col-2, 
+        #grid-col-3, 
+        #grid-col-4, 
+        #grid-col-5, 
+        #grid-col-6, 
+        #grid-col-7, 
+        #grid-col-8, 
+        #grid-col-9, 
+        #grid-col-10, 
+        #grid-col-11, 
+        #grid-col-12 {
+            width: $width;
+        }
+    }
+}
+
+// Apply mixin for different breakpoints
+@include responsive-columns(50%, 1024px);
+@include responsive-columns(100%, 799px);
+
+.post-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+}
+
+.post-col {
+    display: flex;
+    padding: 1em;
+    width: auto;
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: $border-radius-l;
+    overflow: hidden;
+    background: $white;
+
+    figure {
+        position: relative;
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+        transition: transform .2s;
+        //background: url("/assets/images/no-image.png") no-repeat center center;
+        background-color: rgb(221, 221, 221);
+        background-size: cover;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
+
+.grid-item figure img {
+    width: 100%; // THUMB ADJUSTER
+    height: 250px; // SAME AS FIGURE
+    object-fit: cover;
+    margin-bottom: 20px;
+
+    @media screen and (max-width: 800px) {
+        height: 200px;
+    }
+}
+
+figure.overlay:before {
+    position: absolute;
+    content: " ";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    z-index: 0;
+}
+
+figure.overlay-color:before {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+figure.overlay:hover:before {
+    opacity: 0.1;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.grid-item-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex-grow: 1;
+    padding: 0.5rem 2rem;
+
+    .time {
+        margin: 0;
+    }
+
+    h5 {
+        margin: 10px 0;
+        font-size: 1.8rem;
+        line-height: 1.95rem;
+    }
+
+    p.grid-item-excerpt {
+        @include copy-text;
+        font-size: $text-size - 0.11rem;
+        line-height: $text-lh - 0rem;
+        text-align: center;
+        margin: 0;
+    }
+}
+
+a.button {
+    @include button-little;
+}
+
+.flex-spacer {
+    flex-grow: 1;
+}

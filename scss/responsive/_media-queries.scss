@@ -1,0 +1,151 @@
+
+
+//----------------------------------------------------
+//            SMALLER THAN 1440px
+//----------------------------------------------------
+@media screen and (max-width: 1440px) {
+    aside {
+        display: none; // HIDE SIDEBAR POINT
+    }
+
+}
+
+//----------------------------------------------------
+//            SMALLER THAN 1200px
+//----------------------------------------------------
+@media screen and (max-width: 1200px) {
+
+
+}
+
+//----------------------------------------------------
+//            SMALLER THAN 992px
+//----------------------------------------------------
+@media screen and (max-width: 992px) {
+
+    .main-nav {
+        display: none; // **HIDE main nav text
+    }
+
+    .burguer-icon {
+        display: inline-block; // **SHOW burguer menu
+        cursor: pointer;
+    }
+
+    #float-nav,
+    .menu-menu-float-container {
+        display: none; // **HIDE main nav text on FLOAT BAR
+    }
+
+    form#loginform {
+        width: 90%;
+    }
+
+    .login-options-container {
+        flex-direction: column;
+    }
+
+    span.opt-sep {
+        display: none;
+    }
+}
+
+//----------------------------------------------------
+//            SMALLER THAN 768px
+//----------------------------------------------------
+@media screen and (max-width: 768px) {
+
+    // HEADER begin
+
+    .grid-header {
+        position: fixed;
+        //background-color: #fff;
+        z-index: 9999;
+    }
+
+    #nav-float {
+        background: #fff;
+        opacity: 1 !important;
+    }
+
+    // HEADER end
+ 
+
+    footer nav {
+        display: none
+    }
+
+    article ul {
+        margin-left: 0px;
+        padding-left: 10px;
+    }
+	
+	.single-product main {
+		margin-top: 10px;
+	}
+	
+	p#breadcrumbs {
+		font-size: 0.94em !important;
+	}
+	
+	.single-product #breadcrumbs {
+		margin: 0px 0px 20px 0px;
+	}
+}
+
+
+//----------------------------------------------------
+//            SMALLER THAN 576px
+//----------------------------------------------------
+@media screen and (max-width: 576px) {
+
+    .home header { // In case you need transparent header in home due a slideshow or hero
+        background: transparent;
+    }
+
+    header {
+        height: 70px;
+    }
+    
+    header figure#logo-container img {
+        width: 60%;
+    }
+
+    .prognroll-bar {
+        display: none;
+    }
+
+
+    /*p,
+    article ul {
+        font-size: ($text-size/1.1);
+        line-height: ($text-lh/1.18);
+    }*/
+    
+    h1 {
+        line-height: 1.1em;
+    }
+    
+    .wp-block-image img,
+    .wp-block-image .alignleft,
+    figure.alignleft,
+    img.alignleft,
+    figure.alignright,
+    img.alignright {
+        float: none !important;
+        display: block;
+    }  
+
+}
+
+//----------------------------------------------------
+//            SMALLER THAN 400px
+//----------------------------------------------------
+@media screen and (max-width: 400px) {
+
+
+	
+	.post-type-archive-product section.page-title  {
+		display: none;
+	}
+}

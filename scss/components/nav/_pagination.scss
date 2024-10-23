@@ -1,0 +1,50 @@
+.spinner {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/*
+----------------------------
+    @PAGINATION   
+----------------------------
+*/
+// single page
+#nav-single {
+    display: flex;
+    flex-wrap: wrap;
+
+    .pag-previous a,
+    .pag-next a {
+        margin: 10px;
+        display: block;
+    }
+}
+
+// archives
+nav.pagination {
+    display: flex;
+	flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 40px;
+
+    a.page-numbers,
+    span.page-numbers {
+        @include pagination;
+    }
+}
+
+.pagination span.page-numbers.current {
+    color: $button-link-color-hover;
+    background-color: $button-bg-color-hover;
+}

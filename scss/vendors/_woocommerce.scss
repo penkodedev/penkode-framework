@@ -1,0 +1,381 @@
+.members_only_price {
+    display: flex;
+    width: 100%;
+    background: red;
+}
+
+div.product-search-form span.product-search-field-clear {
+    right: -25px !important;
+    top: 0 !important;
+    bottom: 0 !important;
+
+    &:after {
+        @include copy-text;
+        font-size: 2.1em !important;
+        font-weight: bold !important;
+    }
+}
+
+
+/*
+----------------------------
+    @DISPLAY NONE (to quit some items) begin
+----------------------------
+*/
+mark.count,
+.woocommerce-loop-product__link div.star-ratingl,
+.woocommerce .woocommerce-result-count,
+.woocommerce a.added_to_cart {
+    display: none !important;
+}
+
+/*
+----------------------------
+    @DISPLAY NONE (to quit some items) end
+----------------------------
+*/
+
+
+/*
+----------------------------
+    @SHOP MAIN PAGE
+----------------------------
+*/
+
+
+/*
+----------------------------
+    @GRID PRODUCT
+----------------------------
+*/
+
+ul.products li.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    //padding: 8px !important; // Distance between product grid cells
+    text-align: center;
+    margin-bottom: 130px !important;
+
+    a {
+        text-decoration: none !important;
+        background-color: none;
+
+        &:hover {
+            background: none;
+        }
+    }
+}
+
+ul.products li.product:before {
+    content: none;
+}
+
+ul.products li.product a img {
+    // Set Archive Products THUMB SIZE
+    width: 330px !important;
+    height: 330px !important;
+    object-fit: cover;
+}
+
+h2.woocommerce-loop-product__title {
+    color: black;
+    display: flex !important;
+    justify-content: center;
+    text-align: center;
+
+    &:hover {
+        color: $branding-color1
+    }
+}
+
+.woocommerce ul.products li.product .price {
+    display: flex !important;
+    justify-content: center;
+    color: black !important;
+    background: none !important;
+}
+
+/*
+----------------------------
+    @FORMs & SELECTS
+----------------------------
+*/
+
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button {
+    @include button-base;
+    background-image: none !important;
+}
+
+input[type=number] {   //quit arrows from inputs
+    @include copy-text;
+    -moz-appearance: textfield;
+    appearance: textfield;
+    margin: 0;
+    margin: 0px !important;
+    padding: 12px !important;
+}
+
+.product-search input[type="text"].product-search-field,
+.product-search input[type="text"].product-filter-field,
+form select,
+#product_cat {
+    @include copy-text;
+    @include soft-menu;
+    font-size: 1em !important;
+    text-transform: uppercase;
+    color: black !important;
+
+    
+    background-image: url(images/arrow-down2.png);
+    background-repeat: no-repeat;
+    background-position-x: 96%;
+    background-position-y: 11px;
+    background-color: #f7f7f7;
+
+    display: inline-block;
+    line-height: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 15px 55px 15px 20px !important;
+	margin-bottom: 0.7em !important;
+    width: 100%;
+        
+    &:hover {
+        background-color: $white;
+    }
+}
+
+
+form select option,
+#product_cat option { //dropdown font
+    @include copy-text;  
+    font-weight: 300 !important;
+    text-transform: lowercase;
+    font-size: 1em;
+    border: none !important;
+    cursor: pointer !important;
+    display: block;
+            
+    &:first-letter {
+        text-transform: uppercase;
+    }
+}
+
+
+
+/* Active/open */
+select select:active {
+    color: #fff !important;
+    background-color: $branding-color1 !important;
+    cursor: pointer !important;
+}
+
+
+/* Media query to target Firefox only */
+@-moz-document url-prefix() {
+
+    /* Firefox hack to hide the arrow */
+    .woocommerce select {
+        text-indent: 0.01px;
+        text-overflow: '';
+        padding-right: 1rem;
+    }
+
+    /* elements inherit styles from, so reset them. */
+    .woocommerce select option {
+        background-color: white;
+    }
+}
+
+/* IE9 hack to hide the arrow */
+@media screen and (min-width:0\0) {
+    .woocommerce select select {
+        z-index: 1;
+        padding: .5rem 1.5rem .5rem 1rem;
+    }
+
+    .woocommerce select:after {
+        z-index: 5;
+    }
+
+    .woocommerce select:before {
+        position: absolute;
+        top: 0;
+        right: 1rem;
+        bottom: 0;
+        z-index: 2;
+        content: "";
+        display: block;
+        width: 1.5rem;
+        background-color: #eee;
+    }
+
+    .woocommerce select select:hover,
+    .woocommerce select select:focus,
+    .woocommerce select select:active {
+        color: #555;
+        background-color: #eee;
+    }
+}
+
+/*
+----------------------------
+        @BUTTONS 
+----------------------------
+*/
+
+.woocommerce button,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce #respond input#submit {
+    @include button-base;
+    @include transition (background .6s ease);
+    background-size: 210% 100%;
+    background-position: 99% center;
+    background-image: linear-gradient(100deg, white 50%, $black 50%); ;
+        
+    &:hover {
+        background:$branding-color1 !important;
+        color: $white !important;    
+        
+    }
+}
+
+
+/*
+----------------------------------
+    @ERROR & INFO MESSAGES
+----------------------------------
+*/
+
+.woocommerce-error,
+.woocommerce-info,
+.woocommerce-message {
+    display: flex;
+	flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(235, 255, 203) !important;
+    width: 100%  !important;
+    border: none !important;
+    padding: 20px !important;
+    
+        a {
+        color: $black !important;
+    }
+    
+    a.button {
+        margin: 20px !important;
+    }
+    
+    &:before {
+        display:none !important;
+		//font-size: 1.5em !important;
+        //color: $branding-color1 !important;
+        //margin: 0px  !important;
+        //position: relative !important;
+        //top: 0 !important;
+        //left: 0 !important;
+    }
+}
+
+
+/*
+----------------------------------
+    @SHOP HEADER
+----------------------------------
+*/
+
+/// CART COUNTER
+a.cart-counter {
+    @include copy-text;   
+	text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7em;
+    background:$branding-color2;
+    color: $white;
+    border-radius: 50%;
+    height: 18px;
+    width: 18px;
+    position: absolute;
+    right: 10px;
+	
+	&:hover {
+		background:$black;
+		color: $white;
+		text-decoration: none;
+	}
+}
+
+
+/// CART
+.cart-header {
+    display: flex;
+    margin-left: 10px;
+	
+    
+    &:before {
+        content: "\f2fa";
+        font-family: 'Lineawesome';
+        font-size: 1.9em;
+        color: $black;
+    }
+        &:hover:before {
+        color: $branding-color1!important;
+
+    }
+}
+
+a.cart-header {
+    text-decoration: none !important;
+}
+
+
+/// WHATSAPP
+a.whatsapp-call {
+	display: flex;
+	text-decoration: none;
+    margin-left: 10px;
+
+	&:before {
+		content: "\f37a";
+		font-family: 'Lineawesome';
+		font-size: 1.5em;
+		color: $black;
+
+		&:hover:before {
+			color: $branding-color1 !important;
+
+		}
+	}
+}
+
+
+/// USER ACCOUNT
+a.user-header {
+	text-decoration: none;
+}
+
+
+.user-header {
+    display: flex;
+	
+    
+    &:before {
+        content: "\f364";
+        font-family: 'Lineawesome';
+        font-size: 1.8em;
+        color: $black;
+    }
+        &:hover:before {
+        color: $branding-color1!important;
+
+    }
+}
