@@ -32,7 +32,6 @@
 <?php wp_footer(); ?>
 
 <div role="nav" class="back-to-top"></div>
-
 <?php get_template_part('/template-parts/modals'); ?>
 
 </body> <!-- CLOSE BODY -->
