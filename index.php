@@ -42,7 +42,7 @@ get_header(); // Calls the WordPress Header
             </div>
 
         <?php endwhile; else : ?>
-            <p><?php esc_html_e( 'Lo siento, no se encontraron entradas que coincidan con tus criterios.', 'penkode' ); ?></p>
+            <p><?php esc_html_e( 'Sorry, no posts matched your criteria.', 'penkode' ); ?></p>
         <?php endif; ?>
     </section>
 
