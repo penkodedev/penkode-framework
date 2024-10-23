@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         <section class="post-grid">
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-            <div class="post-col" id="grid-col-4" data-aos="zoom-in"><!-- Choose number of columns with grid-col -->
+            <div class="post-col" id="grid-col-12" data-aos="zoom-in"><!-- Choose number of columns with grid-col -->
                 <div class="grid-item">
                     <figure><a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>">
                             <?php the_post_thumbnail('large'); ?></a>
