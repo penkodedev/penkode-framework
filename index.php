@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                             <?php the_title(); ?>
                         </h5>
                         <time class="time">
-									<?php the_time('j/F/Y'); ?>
+							<?php the_time('j/F/Y'); ?>
 						</time>
                         <p class="grid-item-excerpt">
                             <?php echo excerpt('24'); ?>
