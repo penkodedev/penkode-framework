@@ -1,4 +1,5 @@
-# **** ENGLISH ****
+# * Penkode WordPress Framework *
+### English 
 
 # SCSS Project Structure
 
@@ -87,9 +88,10 @@ Responsive breakpoints are defined in `responsive/_media-queries.scss`. You can 
 ```
 ________________________________________________________________________________________
 
-# **** ENGLISH ****
+# * Penkode WordPress Framework *
+### Español 
 
-# SCSS Estructura del proyecto
+# Estructura SCSS (SASS) del proyecto
 
 Este proyecto está organizado usando la metodología 7-1 para gestionar de manera eficiente los archivos SCSS y mantener un código limpio y modular. A continuación se presenta la estructura y el propósito de cada directorio y archivo SCSS dentro del proyecto.
 
