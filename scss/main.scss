@@ -26,6 +26,7 @@ For exclusive use of Penkode clients.
 //*** BASE
 @import "base/effects";
 @import "base/fields";
+@import "base/grid-layout";
 @import "base/fonts";
 @import "base/font-face";
 @import "base/resets";
@@ -35,7 +36,6 @@ For exclusive use of Penkode clients.
 //*** COMPONENTS
 @import "components/accordions";
 @import "components/animations";
-@import "components/grid-layout";
 @import "components/grid-posts-col";  // choose between col or full for post grid
 //@import "components/grid-posts-full"; // choose between col or full for post grid
 @import "components/modals";
