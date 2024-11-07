@@ -1,8 +1,5 @@
 <?php
-
-
 //************************* INCLUDE JS FUNCTIONS **************************************
-
 function enqueue_scripts()
 {
 

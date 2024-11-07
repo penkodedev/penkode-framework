@@ -1244,7 +1244,7 @@ table-bordered tbody:last-child tr:last-child td:last-child {
   margin-bottom: 20px; }
   @media screen and (max-width: 800px) {
     .grid-item figure img {
-      height: 200px; } }
+      height: auto; } }
 
 figure.overlay:before {
   position: absolute;
