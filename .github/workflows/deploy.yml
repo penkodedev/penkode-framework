@@ -1,0 +1,28 @@
+name: Deploy Penkode Framework Theme
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'bin/**'
+      - 'README.md'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Deploy Penkode Framework
+        uses: 8gwifi/action-wordpress-theme-deploy@v1
+        with:
+          host: ${{ secrets.SFTP_HOST }}
+          port: ${{ secrets.SFTP_PORT }}
+          user: ${{ secrets.SFTP_USER }}
+          pass: ${{ secrets.SFTP_PASS }}
+          remoteDir: '/www/public_html/01-penkode.com/framework/wp-content/themes/penkode-framework'
+          options: '--verbose'
