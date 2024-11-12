@@ -16,15 +16,15 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          
 
       - name: Deploy Penkode Framework
-        uses: rtCamp/action-deploy-wordpress@v3
+        uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
-          host: ${{ secrets.SFTP_HOST }}
+          server: ${{ secrets.SFTP_HOST }}
+          username: ${{ secrets.SFTP_USER }}
+          password: ${{ secrets.SFTP_PASS }}
+          protocol: 'sftp'   # Cambiar a 'ftp' si solo soporta FTP
           port: ${{ secrets.SFTP_PORT }}
-          user: ${{ secrets.SFTP_USER }}
-          pass: ${{ secrets.SFTP_PASS }}
-          remoteDir: '/www/public_html/01-penkode.com/framework/wp-content/themes/penkode-framework'
-          options: '--verbose'
-          
+          local-dir: './'  # Directorio local a desplegar
+          server-dir: '/www/public_html/01-penkode.com/framework/wp-content/themes/penkode-framework'
+          log-level: 'verbose'
