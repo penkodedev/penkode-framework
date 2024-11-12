@@ -27,3 +27,5 @@ jobs:
           source: './'  # Directorio local a subir (ajústalo según sea necesario)
           target: '/www/public_html/01-penkode.com/framework/wp-content/themes/penkode-framework'
           rm: true  # Opcional: limpia archivos en el destino antes de copiar
+          timeout: 600s # Aumenta el timeout a 10 minutos (600 segundos)
+          use_net: true # Utiliza la biblioteca Go "net" en lugar de "ssh" para mejorar la confiabilidad de la conexión
