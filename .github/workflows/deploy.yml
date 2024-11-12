@@ -17,14 +17,13 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Deploy Penkode Framework
-        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      - name: Deploy Penkode Framework via SFTP
+        uses: appleboy/scp-action@v0.1.0
         with:
-          server: ${{ secrets.SFTP_HOST }}
+          host: ${{ secrets.SFTP_HOST }}
           username: ${{ secrets.SFTP_USER }}
           password: ${{ secrets.SFTP_PASS }}
-          protocol: 'sftp'   # Cambiar a 'ftp' si solo soporta FTP
           port: ${{ secrets.SFTP_PORT }}
-          local-dir: './'  # Directorio local a desplegar
-          server-dir: '/www/public_html/01-penkode.com/framework/wp-content/themes/penkode-framework'
-          log-level: 'verbose'
+          source: './'  # Directorio local a subir (ajústalo según sea necesario)
+          target: '/www/public_html/01-penkode.com/framework/wp-content/themes/penkode-framework'
+          rm: true  # Opcional: limpia archivos en el destino antes de copiar
