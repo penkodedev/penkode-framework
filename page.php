@@ -10,7 +10,7 @@ get_header(); // Calls the WordPress Header
 
 <section class="page-title">
     <div class="page-title-container">
-        <h1><?php the_title(); ?>adfadfadf1</h1>
+        <h1><?php the_title(); ?></h1>
     </div>
 </section>
 
