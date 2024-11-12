@@ -19,7 +19,7 @@ jobs:
           repository: https://github.com/penkodedev/penkode-framework
 
       - name: Deploy Penkode Framework
-        uses: 8gwifi/action-wordpress-theme-deploy@v1
+        uses: rtCamp/action-deploy-wordpress@v3
         with:
           host: ${{ secrets.SFTP_HOST }}
           port: ${{ secrets.SFTP_PORT }}
