@@ -27,3 +27,4 @@ jobs:
           pass: ${{ secrets.SFTP_PASS }}
           remoteDir: '/www/public_html/01-penkode.com/framework/wp-content/themes/penkode-framework'
           options: '--verbose'
+          
